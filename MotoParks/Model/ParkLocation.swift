@@ -7,8 +7,33 @@
 //
 
 import Foundation
+import MapKit
 
-class ParkLocation {
+class ParkLocation: NSObject, MKAnnotation {
     
+    var address: String?
+    var latitude: Double!
+    var longitude: Double!
+    
+    var coordinate: CLLocationCoordinate2D { return CLLocationCoordinate2D(latitude: latitude, longitude: longitude) }
+    
+    init(latitude: Double, longitude: Double, address: String? = nil) {
+        super.init()
+        self.latitude = latitude
+        self.longitude = longitude
+        self.address = address
+    }
+    
+    convenience init?(json: AnyObject) {
+        
+        guard
+            let latitude = json["latitude"] as? Double,
+            let longitude = json["longitude"] as? Double else {
+                return nil
+        }
+        
+        let address = json["address"] as? String
+        self.init(latitude: latitude, longitude: longitude, address: address)
+    }
     
 }

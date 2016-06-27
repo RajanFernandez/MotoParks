@@ -9,6 +9,11 @@
 import UIKit
 import MapKit
 
+enum MPError: ErrorType {
+    case DataReadError
+    case DataParsingError
+}
+
 class MapViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet var mapView: MKMapView!
@@ -26,6 +31,18 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         }
         
         mapView.setRegion(wellingtonRegion, animated: false)
+        
+        do {
+            let parks = try loadParkLocationsWithDataSetNamed("parks")
+            mapView.performSelectorOnMainThread(#selector(MKMapView.addAnnotations(_:)), withObject: parks, waitUntilDone: false)
+        } catch {
+            let alert = UIAlertController(title: "Woops...", message: "Sorry, an error occured while loading data. Please try restarting the app.", preferredStyle: .Alert)
+            let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+            alert.addAction(action)
+            dispatch_async(dispatch_get_main_queue()) { [weak self] in
+                self?.presentViewController(alert, animated: true, completion: nil)
+            }
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -41,8 +58,30 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
     }
     
-    func loadParkLocationsWithDataSetNamed(named: String) -> [ParkLocation] {
+    func loadParkLocationsWithDataSetNamed(named: String) throws -> [ParkLocation] {
+        
+        guard let dataAsset = NSDataAsset(name: named) else {
+            throw MPError.DataReadError
+        }
+        
+        var json: AnyObject
+        do {
+            json = try NSJSONSerialization.JSONObjectWithData(dataAsset.data, options: .MutableContainers)
+        } catch {
+            throw MPError.DataParsingError
+        }
+        
         var parks = [ParkLocation]()
+        if let jsonParks = json["parks"] as? [AnyObject] {
+            for jsonPark in jsonParks {
+                if let park = ParkLocation(json: jsonPark) {
+                    parks.append(park)
+                }
+            }
+        } else {
+            throw MPError.DataParsingError
+        }
+
         return parks
     }
 
