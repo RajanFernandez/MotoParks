@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E52688AE1D20ED4800990737 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52688AD1D20ED4800990737 /* AppDelegate.swift */; };
+		E52688B01D20ED4800990737 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52688AF1D20ED4800990737 /* ViewController.swift */; };
+		E52688B31D20ED4800990737 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E52688B11D20ED4800990737 /* Main.storyboard */; };
+		E52688B51D20ED4800990737 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E52688B41D20ED4800990737 /* Assets.xcassets */; };
+		E52688B81D20ED4800990737 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E52688B61D20ED4800990737 /* LaunchScreen.storyboard */; };
+		E52688C31D20ED4800990737 /* MotoParksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52688C21D20ED4800990737 /* MotoParksTests.swift */; };
+		E52688CE1D20ED4800990737 /* MotoParksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52688CD1D20ED4800990737 /* MotoParksUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E52688BF1D20ED4800990737 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E52688A21D20ED4800990737 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E52688A91D20ED4800990737;
+			remoteInfo = MotoParks;
+		};
+		E52688CA1D20ED4800990737 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E52688A21D20ED4800990737 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E52688A91D20ED4800990737;
+			remoteInfo = MotoParks;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E52688AA1D20ED4800990737 /* MotoParks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotoParks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E52688AD1D20ED4800990737 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E52688AF1D20ED4800990737 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E52688B21D20ED4800990737 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E52688B41D20ED4800990737 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E52688B71D20ED4800990737 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E52688B91D20ED4800990737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E52688BE1D20ED4800990737 /* MotoParksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MotoParksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E52688C21D20ED4800990737 /* MotoParksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotoParksTests.swift; sourceTree = "<group>"; };
+		E52688C41D20ED4800990737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E52688C91D20ED4800990737 /* MotoParksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MotoParksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E52688CD1D20ED4800990737 /* MotoParksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotoParksUITests.swift; sourceTree = "<group>"; };
+		E52688CF1D20ED4800990737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E52688A71D20ED4800990737 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E52688BB1D20ED4800990737 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E52688C61D20ED4800990737 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E52688A11D20ED4800990737 = {
+			isa = PBXGroup;
+			children = (
+				E52688AC1D20ED4800990737 /* MotoParks */,
+				E52688C11D20ED4800990737 /* MotoParksTests */,
+				E52688CC1D20ED4800990737 /* MotoParksUITests */,
+				E52688AB1D20ED4800990737 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E52688AB1D20ED4800990737 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E52688AA1D20ED4800990737 /* MotoParks.app */,
+				E52688BE1D20ED4800990737 /* MotoParksTests.xctest */,
+				E52688C91D20ED4800990737 /* MotoParksUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E52688AC1D20ED4800990737 /* MotoParks */ = {
+			isa = PBXGroup;
+			children = (
+				E52688AD1D20ED4800990737 /* AppDelegate.swift */,
+				E52688AF1D20ED4800990737 /* ViewController.swift */,
+				E52688B11D20ED4800990737 /* Main.storyboard */,
+				E52688B41D20ED4800990737 /* Assets.xcassets */,
+				E52688B61D20ED4800990737 /* LaunchScreen.storyboard */,
+				E52688B91D20ED4800990737 /* Info.plist */,
+			);
+			path = MotoParks;
+			sourceTree = "<group>";
+		};
+		E52688C11D20ED4800990737 /* MotoParksTests */ = {
+			isa = PBXGroup;
+			children = (
+				E52688C21D20ED4800990737 /* MotoParksTests.swift */,
+				E52688C41D20ED4800990737 /* Info.plist */,
+			);
+			path = MotoParksTests;
+			sourceTree = "<group>";
+		};
+		E52688CC1D20ED4800990737 /* MotoParksUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E52688CD1D20ED4800990737 /* MotoParksUITests.swift */,
+				E52688CF1D20ED4800990737 /* Info.plist */,
+			);
+			path = MotoParksUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E52688A91D20ED4800990737 /* MotoParks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E52688D21D20ED4800990737 /* Build configuration list for PBXNativeTarget "MotoParks" */;
+			buildPhases = (
+				E52688A61D20ED4800990737 /* Sources */,
+				E52688A71D20ED4800990737 /* Frameworks */,
+				E52688A81D20ED4800990737 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MotoParks;
+			productName = MotoParks;
+			productReference = E52688AA1D20ED4800990737 /* MotoParks.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E52688BD1D20ED4800990737 /* MotoParksTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E52688D51D20ED4800990737 /* Build configuration list for PBXNativeTarget "MotoParksTests" */;
+			buildPhases = (
+				E52688BA1D20ED4800990737 /* Sources */,
+				E52688BB1D20ED4800990737 /* Frameworks */,
+				E52688BC1D20ED4800990737 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E52688C01D20ED4800990737 /* PBXTargetDependency */,
+			);
+			name = MotoParksTests;
+			productName = MotoParksTests;
+			productReference = E52688BE1D20ED4800990737 /* MotoParksTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E52688C81D20ED4800990737 /* MotoParksUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E52688D81D20ED4800990737 /* Build configuration list for PBXNativeTarget "MotoParksUITests" */;
+			buildPhases = (
+				E52688C51D20ED4800990737 /* Sources */,
+				E52688C61D20ED4800990737 /* Frameworks */,
+				E52688C71D20ED4800990737 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E52688CB1D20ED4800990737 /* PBXTargetDependency */,
+			);
+			name = MotoParksUITests;
+			productName = MotoParksUITests;
+			productReference = E52688C91D20ED4800990737 /* MotoParksUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E52688A21D20ED4800990737 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Rajan Fernandez";
+				TargetAttributes = {
+					E52688A91D20ED4800990737 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					E52688BD1D20ED4800990737 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = E52688A91D20ED4800990737;
+					};
+					E52688C81D20ED4800990737 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = E52688A91D20ED4800990737;
+					};
+				};
+			};
+			buildConfigurationList = E52688A51D20ED4800990737 /* Build configuration list for PBXProject "MotoParks" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E52688A11D20ED4800990737;
+			productRefGroup = E52688AB1D20ED4800990737 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E52688A91D20ED4800990737 /* MotoParks */,
+				E52688BD1D20ED4800990737 /* MotoParksTests */,
+				E52688C81D20ED4800990737 /* MotoParksUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E52688A81D20ED4800990737 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E52688B81D20ED4800990737 /* LaunchScreen.storyboard in Resources */,
+				E52688B51D20ED4800990737 /* Assets.xcassets in Resources */,
+				E52688B31D20ED4800990737 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E52688BC1D20ED4800990737 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E52688C71D20ED4800990737 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E52688A61D20ED4800990737 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E52688B01D20ED4800990737 /* ViewController.swift in Sources */,
+				E52688AE1D20ED4800990737 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E52688BA1D20ED4800990737 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E52688C31D20ED4800990737 /* MotoParksTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E52688C51D20ED4800990737 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E52688CE1D20ED4800990737 /* MotoParksUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E52688C01D20ED4800990737 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E52688A91D20ED4800990737 /* MotoParks */;
+			targetProxy = E52688BF1D20ED4800990737 /* PBXContainerItemProxy */;
+		};
+		E52688CB1D20ED4800990737 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E52688A91D20ED4800990737 /* MotoParks */;
+			targetProxy = E52688CA1D20ED4800990737 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E52688B11D20ED4800990737 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E52688B21D20ED4800990737 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E52688B61D20ED4800990737 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E52688B71D20ED4800990737 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E52688D01D20ED4800990737 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E52688D11D20ED4800990737 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E52688D31D20ED4800990737 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MotoParks/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rajanfernandez.MotoParks;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E52688D41D20ED4800990737 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MotoParks/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rajanfernandez.MotoParks;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E52688D61D20ED4800990737 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MotoParksTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rajanfernandez.MotoParksTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MotoParks.app/MotoParks";
+			};
+			name = Debug;
+		};
+		E52688D71D20ED4800990737 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MotoParksTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rajanfernandez.MotoParksTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MotoParks.app/MotoParks";
+			};
+			name = Release;
+		};
+		E52688D91D20ED4800990737 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MotoParksUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rajanfernandez.MotoParksUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MotoParks;
+			};
+			name = Debug;
+		};
+		E52688DA1D20ED4800990737 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MotoParksUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rajanfernandez.MotoParksUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MotoParks;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E52688A51D20ED4800990737 /* Build configuration list for PBXProject "MotoParks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E52688D01D20ED4800990737 /* Debug */,
+				E52688D11D20ED4800990737 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E52688D21D20ED4800990737 /* Build configuration list for PBXNativeTarget "MotoParks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E52688D31D20ED4800990737 /* Debug */,
+				E52688D41D20ED4800990737 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E52688D51D20ED4800990737 /* Build configuration list for PBXNativeTarget "MotoParksTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E52688D61D20ED4800990737 /* Debug */,
+				E52688D71D20ED4800990737 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E52688D81D20ED4800990737 /* Build configuration list for PBXNativeTarget "MotoParksUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E52688D91D20ED4800990737 /* Debug */,
+				E52688DA1D20ED4800990737 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E52688A21D20ED4800990737 /* Project object */;
+}
