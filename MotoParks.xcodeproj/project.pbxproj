@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		E52688AE1D20ED4800990737 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52688AD1D20ED4800990737 /* AppDelegate.swift */; };
-		E52688B01D20ED4800990737 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52688AF1D20ED4800990737 /* ViewController.swift */; };
-		E52688B31D20ED4800990737 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E52688B11D20ED4800990737 /* Main.storyboard */; };
 		E52688B51D20ED4800990737 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E52688B41D20ED4800990737 /* Assets.xcassets */; };
-		E52688B81D20ED4800990737 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E52688B61D20ED4800990737 /* LaunchScreen.storyboard */; };
 		E52688C31D20ED4800990737 /* MotoParksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52688C21D20ED4800990737 /* MotoParksTests.swift */; };
 		E52688CE1D20ED4800990737 /* MotoParksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52688CD1D20ED4800990737 /* MotoParksUITests.swift */; };
+		E52688DC1D20EEA700990737 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52688DB1D20EEA700990737 /* MapViewController.swift */; };
+		E52688E31D20EFA400990737 /* ParkLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52688E21D20EFA400990737 /* ParkLocation.swift */; };
+		E52688E61D20F0D100990737 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E52688E51D20F0D100990737 /* Main.storyboard */; };
+		E52688E81D20F13300990737 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E52688E71D20F13300990737 /* LaunchScreen.storyboard */; };
+		E52688EB1D20F22000990737 /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52688EA1D20F22000990737 /* InfoTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +38,7 @@
 /* Begin PBXFileReference section */
 		E52688AA1D20ED4800990737 /* MotoParks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotoParks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E52688AD1D20ED4800990737 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E52688AF1D20ED4800990737 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E52688B21D20ED4800990737 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E52688B41D20ED4800990737 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E52688B71D20ED4800990737 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E52688B91D20ED4800990737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E52688BE1D20ED4800990737 /* MotoParksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MotoParksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E52688C21D20ED4800990737 /* MotoParksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotoParksTests.swift; sourceTree = "<group>"; };
@@ -47,6 +46,11 @@
 		E52688C91D20ED4800990737 /* MotoParksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MotoParksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E52688CD1D20ED4800990737 /* MotoParksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotoParksUITests.swift; sourceTree = "<group>"; };
 		E52688CF1D20ED4800990737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E52688DB1D20EEA700990737 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		E52688E21D20EFA400990737 /* ParkLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkLocation.swift; sourceTree = "<group>"; };
+		E52688E51D20F0D100990737 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		E52688E71D20F13300990737 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E52688EA1D20F22000990737 /* InfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,11 +101,11 @@
 		E52688AC1D20ED4800990737 /* MotoParks */ = {
 			isa = PBXGroup;
 			children = (
+				E52688E11D20EF2B00990737 /* Controllers */,
+				E52688E01D20EF2600990737 /* View */,
+				E52688DF1D20EF1F00990737 /* Model */,
 				E52688AD1D20ED4800990737 /* AppDelegate.swift */,
-				E52688AF1D20ED4800990737 /* ViewController.swift */,
-				E52688B11D20ED4800990737 /* Main.storyboard */,
 				E52688B41D20ED4800990737 /* Assets.xcassets */,
-				E52688B61D20ED4800990737 /* LaunchScreen.storyboard */,
 				E52688B91D20ED4800990737 /* Info.plist */,
 			);
 			path = MotoParks;
@@ -123,6 +127,48 @@
 				E52688CF1D20ED4800990737 /* Info.plist */,
 			);
 			path = MotoParksUITests;
+			sourceTree = "<group>";
+		};
+		E52688DF1D20EF1F00990737 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E52688E21D20EFA400990737 /* ParkLocation.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E52688E01D20EF2600990737 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E52688E51D20F0D100990737 /* Main.storyboard */,
+				E52688E71D20F13300990737 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E52688E11D20EF2B00990737 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E52688E91D20F20200990737 /* InfoTableViewController */,
+				E52688E41D20EFFB00990737 /* MapViewController */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E52688E41D20EFFB00990737 /* MapViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E52688DB1D20EEA700990737 /* MapViewController.swift */,
+			);
+			path = MapViewController;
+			sourceTree = "<group>";
+		};
+		E52688E91D20F20200990737 /* InfoTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E52688EA1D20F22000990737 /* InfoTableViewController.swift */,
+			);
+			path = InfoTableViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,9 +275,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E52688B81D20ED4800990737 /* LaunchScreen.storyboard in Resources */,
+				E52688E81D20F13300990737 /* LaunchScreen.storyboard in Resources */,
 				E52688B51D20ED4800990737 /* Assets.xcassets in Resources */,
-				E52688B31D20ED4800990737 /* Main.storyboard in Resources */,
+				E52688E61D20F0D100990737 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +302,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E52688B01D20ED4800990737 /* ViewController.swift in Sources */,
+				E52688DC1D20EEA700990737 /* MapViewController.swift in Sources */,
+				E52688E31D20EFA400990737 /* ParkLocation.swift in Sources */,
 				E52688AE1D20ED4800990737 /* AppDelegate.swift in Sources */,
+				E52688EB1D20F22000990737 /* InfoTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,25 +339,6 @@
 			targetProxy = E52688CA1D20ED4800990737 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		E52688B11D20ED4800990737 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E52688B21D20ED4800990737 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E52688B61D20ED4800990737 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E52688B71D20ED4800990737 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		E52688D01D20ED4800990737 /* Debug */ = {
@@ -484,6 +513,7 @@
 				E52688D41D20ED4800990737 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E52688D51D20ED4800990737 /* Build configuration list for PBXNativeTarget "MotoParksTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +522,7 @@
 				E52688D71D20ED4800990737 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E52688D81D20ED4800990737 /* Build configuration list for PBXNativeTarget "MotoParksUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +531,7 @@
 				E52688DA1D20ED4800990737 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
