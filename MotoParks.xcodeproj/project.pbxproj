@@ -16,6 +16,9 @@
 		E52688E61D20F0D100990737 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E52688E51D20F0D100990737 /* Main.storyboard */; };
 		E52688E81D20F13300990737 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E52688E71D20F13300990737 /* LaunchScreen.storyboard */; };
 		E52688EB1D20F22000990737 /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52688EA1D20F22000990737 /* InfoTableViewController.swift */; };
+		E58C370D1D28C793001B03D5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E58C370C1D28C793001B03D5 /* MapKit.framework */; };
+		E58C370F1D28D4CA001B03D5 /* KMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58C370E1D28D4CA001B03D5 /* KMLParser.swift */; };
+		E58C37111D28D7DC001B03D5 /* KMLPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58C37101D28D7DC001B03D5 /* KMLPlacemark.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		E52688E51D20F0D100990737 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E52688E71D20F13300990737 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E52688EA1D20F22000990737 /* InfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewController.swift; sourceTree = "<group>"; };
+		E58C370C1D28C793001B03D5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		E58C370E1D28D4CA001B03D5 /* KMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMLParser.swift; sourceTree = "<group>"; };
+		E58C37101D28D7DC001B03D5 /* KMLPlacemark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMLPlacemark.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E58C370D1D28C793001B03D5 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +88,7 @@
 		E52688A11D20ED4800990737 = {
 			isa = PBXGroup;
 			children = (
+				E58C370C1D28C793001B03D5 /* MapKit.framework */,
 				E52688AC1D20ED4800990737 /* MotoParks */,
 				E52688C11D20ED4800990737 /* MotoParksTests */,
 				E52688CC1D20ED4800990737 /* MotoParksUITests */,
@@ -133,6 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				E52688E21D20EFA400990737 /* ParkLocation.swift */,
+				E58C370E1D28D4CA001B03D5 /* KMLParser.swift */,
+				E58C37101D28D7DC001B03D5 /* KMLPlacemark.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -239,6 +249,11 @@
 				TargetAttributes = {
 					E52688A91D20ED4800990737 = {
 						CreatedOnToolsVersion = 7.3.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					E52688BD1D20ED4800990737 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -303,7 +318,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E52688DC1D20EEA700990737 /* MapViewController.swift in Sources */,
+				E58C37111D28D7DC001B03D5 /* KMLPlacemark.swift in Sources */,
 				E52688E31D20EFA400990737 /* ParkLocation.swift in Sources */,
+				E58C370F1D28D4CA001B03D5 /* KMLParser.swift in Sources */,
 				E52688AE1D20ED4800990737 /* AppDelegate.swift in Sources */,
 				E52688EB1D20F22000990737 /* InfoTableViewController.swift in Sources */,
 			);

@@ -6,8 +6,8 @@
   "data" : [
     {
       "idiom" : "universal",
-      "filename" : "parks.json",
-      "universal-type-identifier" : "public.json"
+      "filename" : "parks.kml",
+      "universal-type-identifier" : "dyn.ah62d4rv4ge8005pq"
     }
   ]
 }

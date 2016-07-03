@@ -14,13 +14,13 @@ enum MPError: ErrorType {
     case DataParsingError
 }
 
-class MapViewController: UIViewController, MKMapViewDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, NSXMLParserDelegate {
     
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var centerOnLocationButton: UIBarButtonItem!
     var locationManager = CLLocationManager()
     
-    let wellingtonRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: -41.293168547236348, longitude: 174.77885395592267), span: MKCoordinateSpan(latitudeDelta: 0.046173607176569931, longitudeDelta: 0.03553390886759189))
+    let wellingtonRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: -41.286781914499926, longitude: 174.77909061803408), span: MKCoordinateSpan(latitudeDelta: 0.03924177397755102, longitudeDelta: 0.030196408891356441))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +33,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         mapView.setRegion(wellingtonRegion, animated: false)
         
         do {
-            let parks = try loadParkLocationsWithDataSetNamed("parks")
-            mapView.performSelectorOnMainThread(#selector(MKMapView.addAnnotations(_:)), withObject: parks, waitUntilDone: false)
+            let placemarks = try loadParkLocationsWithDataSetNamed("parks")
+            mapView.performSelectorOnMainThread(#selector(MKMapView.addAnnotations(_:)), withObject: placemarks, waitUntilDone: false)
         } catch {
             let alert = UIAlertController(title: "Woops...", message: "Sorry, an error occured while loading data. Please try restarting the app.", preferredStyle: .Alert)
             let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
@@ -43,6 +43,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 self?.presentViewController(alert, animated: true, completion: nil)
             }
         }
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -50,35 +51,32 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }
     
     @IBAction func centerOnLocation(sender:AnyObject?) {
-        
+        if CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse {
+            mapView.setCenterCoordinate(mapView.userLocation.coordinate, animated: true)
+        } else {
+            let alert = UIAlertController(title: "Enable location services", message: "To centre the map on your location we need to know your location. Please change your location privacy settings in the settings app.", preferredStyle: .Alert)
+            let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+            alert.addAction(action)
+            dispatch_async(dispatch_get_main_queue()) { [weak self] in
+                self?.presentViewController(alert, animated: true, completion: nil)
+            }
+        }
     }
     
-    func loadParkLocationsWithDataSetNamed(named: String) throws -> [ParkLocation] {
+    func loadParkLocationsWithDataSetNamed(named: String) throws -> [KMLPlacemark] {
         
         guard let dataAsset = NSDataAsset(name: named) else {
             throw MPError.DataReadError
         }
         
-        var json: AnyObject
-        do {
-            json = try NSJSONSerialization.JSONObjectWithData(dataAsset.data, options: .MutableContainers)
-        } catch {
-            throw MPError.DataParsingError
-        }
-        
-        var parks = [ParkLocation]()
-        if let jsonParks = json["parks"] as? [AnyObject] {
-            for jsonPark in jsonParks {
-                if let park = ParkLocation(json: jsonPark) {
-                    parks.append(park)
-                }
-            }
-        } else {
-            throw MPError.DataParsingError
-        }
-
+        let kmlParser = KMLParser(kml: dataAsset.data)
+        let parks = kmlParser.getPlacemarks()
         return parks
     }
-
+    
+    func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        print(mapView.region)
+    }
+    
 }
 
