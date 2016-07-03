@@ -37,19 +37,27 @@ class KMLParser: NSObject, NSXMLParserDelegate {
     
     func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         currentKey = elementName
+        if elementName == "Placemark" { clearTempData() }
     }
     
     func parser(parser: NSXMLParser, foundCharacters string: String) {
         
         guard let currentKey = currentKey else { return }
         
+        let charSet = NSMutableCharacterSet()
+        charSet.formUnionWithCharacterSet(NSCharacterSet.whitespaceCharacterSet())
+        charSet.formUnionWithCharacterSet(NSCharacterSet.newlineCharacterSet())
+        
         switch currentKey {
         case "name":
-            name = string
+            let nameString = string.stringByTrimmingCharactersInSet(charSet)
+            print(nameString)
+            if name != nil {
+                name! += nameString
+            } else {
+                name = nameString
+            }
         case "coordinates":
-            let charSet = NSMutableCharacterSet()
-            charSet.formUnionWithCharacterSet(NSCharacterSet.whitespaceCharacterSet())
-            charSet.formUnionWithCharacterSet(NSCharacterSet.newlineCharacterSet())
             let coordinateArray = string.stringByTrimmingCharactersInSet(charSet).componentsSeparatedByString(",")
             guard coordinateArray.count > 2 else { return }
             longitude = Double(coordinateArray[0])
@@ -63,7 +71,13 @@ class KMLParser: NSObject, NSXMLParserDelegate {
         guard elementName == "Placemark" else { return }
         guard let latitude = latitude, longitude = longitude else { return }
         placemarks.append(KMLPlacemark(latitude: latitude, longitude: longitude, name: name))
-        currentKey = nil
+        clearTempData()
     }
     
+    func clearTempData() {
+        currentKey = nil
+        latitude = nil
+        longitude = nil
+        name = nil
+    }
 }
