@@ -48,11 +48,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     override func viewDidAppear(animated: Bool) {
         mapView.showsUserLocation = CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     @IBAction func centerOnLocation(sender:AnyObject?) {
         
