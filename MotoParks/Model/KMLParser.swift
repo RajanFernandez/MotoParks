@@ -51,7 +51,6 @@ class KMLParser: NSObject, NSXMLParserDelegate {
         switch currentKey {
         case "name":
             let nameString = string.stringByTrimmingCharactersInSet(charSet)
-            print(nameString)
             if name != nil {
                 name! += nameString
             } else {

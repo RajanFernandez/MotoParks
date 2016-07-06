@@ -51,6 +51,7 @@
                     </view>
                     <connections>
                         <outlet property="centerOnLocationButton" destination="hYE-o0-hLF" id="zFg-Ju-80i"/>
+                        <outlet property="infoButton" destination="5qV-CK-8cn" id="HlZ-ik-llh"/>
                         <outlet property="mapView" destination="V72-2V-Let" id="lts-G7-aM9"/>
                     </connections>
                 </viewController>
