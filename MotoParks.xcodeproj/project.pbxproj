@@ -14,12 +14,12 @@
 		E52688DC1D20EEA700990737 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52688DB1D20EEA700990737 /* MapViewController.swift */; };
 		E52688E31D20EFA400990737 /* ParkLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52688E21D20EFA400990737 /* ParkLocation.swift */; };
 		E52688E61D20F0D100990737 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E52688E51D20F0D100990737 /* Main.storyboard */; };
-		E52688E81D20F13300990737 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E52688E71D20F13300990737 /* LaunchScreen.storyboard */; };
 		E52688EB1D20F22000990737 /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52688EA1D20F22000990737 /* InfoTableViewController.swift */; };
 		E58C370D1D28C793001B03D5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E58C370C1D28C793001B03D5 /* MapKit.framework */; };
 		E58C370F1D28D4CA001B03D5 /* KMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58C370E1D28D4CA001B03D5 /* KMLParser.swift */; };
 		E58C37111D28D7DC001B03D5 /* KMLPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58C37101D28D7DC001B03D5 /* KMLPlacemark.swift */; };
 		E58C372E1D2CE976001B03D5 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E58C372D1D2CE976001B03D5 /* Settings.bundle */; };
+		E5AA07971D3AE0D900C3E615 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5AA07961D3AE0D900C3E615 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,13 +53,13 @@
 		E52688DB1D20EEA700990737 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E52688E21D20EFA400990737 /* ParkLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkLocation.swift; sourceTree = "<group>"; };
 		E52688E51D20F0D100990737 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		E52688E71D20F13300990737 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E52688EA1D20F22000990737 /* InfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewController.swift; sourceTree = "<group>"; };
 		E58C370C1D28C793001B03D5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E58C370E1D28D4CA001B03D5 /* KMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMLParser.swift; sourceTree = "<group>"; };
 		E58C37101D28D7DC001B03D5 /* KMLPlacemark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMLPlacemark.swift; sourceTree = "<group>"; };
 		E58C372D1D2CE976001B03D5 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		E58C372F1D2CF038001B03D5 /* Wellington.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Wellington.gpx; sourceTree = "<group>"; };
+		E5AA07961D3AE0D900C3E615 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				E52688E51D20F0D100990737 /* Main.storyboard */,
-				E52688E71D20F13300990737 /* LaunchScreen.storyboard */,
+				E5AA07961D3AE0D900C3E615 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -297,7 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E58C372E1D2CE976001B03D5 /* Settings.bundle in Resources */,
-				E52688E81D20F13300990737 /* LaunchScreen.storyboard in Resources */,
+				E5AA07971D3AE0D900C3E615 /* LaunchScreen.storyboard in Resources */,
 				E52688B51D20ED4800990737 /* Assets.xcassets in Resources */,
 				E52688E61D20F0D100990737 /* Main.storyboard in Resources */,
 			);
@@ -459,6 +459,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rajanfernandez.MotoParks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -471,6 +472,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rajanfernandez.MotoParks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
