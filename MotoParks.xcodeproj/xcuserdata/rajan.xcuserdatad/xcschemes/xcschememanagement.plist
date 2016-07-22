@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>MotoParks Watch App (Notification).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>MotoParks Watch App.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>MotoParks.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -23,6 +33,11 @@
 			<true/>
 		</dict>
 		<key>E52688C81D20ED4800990737</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E5BB2A7F1D40D37C0035F76C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

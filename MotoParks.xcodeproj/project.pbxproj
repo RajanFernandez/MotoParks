@@ -20,6 +20,14 @@
 		E58C37111D28D7DC001B03D5 /* KMLPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58C37101D28D7DC001B03D5 /* KMLPlacemark.swift */; };
 		E58C372E1D2CE976001B03D5 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E58C372D1D2CE976001B03D5 /* Settings.bundle */; };
 		E5AA07971D3AE0D900C3E615 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5AA07961D3AE0D900C3E615 /* LaunchScreen.storyboard */; };
+		E5BB2A841D40D37C0035F76C /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5BB2A821D40D37C0035F76C /* Interface.storyboard */; };
+		E5BB2A861D40D37C0035F76C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5BB2A851D40D37C0035F76C /* Assets.xcassets */; };
+		E5BB2A8D1D40D37C0035F76C /* MotoParks Watch App Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E5BB2A8C1D40D37C0035F76C /* MotoParks Watch App Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E5BB2A941D40D37C0035F76C /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BB2A931D40D37C0035F76C /* InterfaceController.swift */; };
+		E5BB2A961D40D37C0035F76C /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BB2A951D40D37C0035F76C /* ExtensionDelegate.swift */; };
+		E5BB2A981D40D37C0035F76C /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BB2A971D40D37C0035F76C /* NotificationController.swift */; };
+		E5BB2A9A1D40D37C0035F76C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5BB2A991D40D37C0035F76C /* Assets.xcassets */; };
+		E5BB2A9E1D40D37C0035F76C /* MotoParks Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = E5BB2A801D40D37C0035F76C /* MotoParks Watch App.app */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +45,46 @@
 			remoteGlobalIDString = E52688A91D20ED4800990737;
 			remoteInfo = MotoParks;
 		};
+		E5BB2A8E1D40D37C0035F76C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E52688A21D20ED4800990737 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E5BB2A8B1D40D37C0035F76C;
+			remoteInfo = "MotoParks Watch App Extension";
+		};
+		E5BB2A9C1D40D37C0035F76C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E52688A21D20ED4800990737 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E5BB2A7F1D40D37C0035F76C;
+			remoteInfo = "MotoParks Watch App";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E5BB2AA41D40D37D0035F76C /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E5BB2A8D1D40D37C0035F76C /* MotoParks Watch App Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5BB2AA61D40D37D0035F76C /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				E5BB2A9E1D40D37C0035F76C /* MotoParks Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E52688AA1D20ED4800990737 /* MotoParks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotoParks.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +107,17 @@
 		E58C372D1D2CE976001B03D5 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		E58C372F1D2CF038001B03D5 /* Wellington.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Wellington.gpx; sourceTree = "<group>"; };
 		E5AA07961D3AE0D900C3E615 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E5BB2A801D40D37C0035F76C /* MotoParks Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MotoParks Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5BB2A831D40D37C0035F76C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		E5BB2A851D40D37C0035F76C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E5BB2A871D40D37C0035F76C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5BB2A8C1D40D37C0035F76C /* MotoParks Watch App Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "MotoParks Watch App Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5BB2A921D40D37C0035F76C /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		E5BB2A931D40D37C0035F76C /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		E5BB2A951D40D37C0035F76C /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		E5BB2A971D40D37C0035F76C /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		E5BB2A991D40D37C0035F76C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E5BB2A9B1D40D37C0035F76C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +143,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E5BB2A891D40D37C0035F76C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -96,6 +161,8 @@
 				E52688AC1D20ED4800990737 /* MotoParks */,
 				E52688C11D20ED4800990737 /* MotoParksTests */,
 				E52688CC1D20ED4800990737 /* MotoParksUITests */,
+				E5BB2A811D40D37C0035F76C /* MotoParks Watch App */,
+				E5BB2A901D40D37C0035F76C /* MotoParks Watch App Extension */,
 				E52688AB1D20ED4800990737 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -106,6 +173,8 @@
 				E52688AA1D20ED4800990737 /* MotoParks.app */,
 				E52688BE1D20ED4800990737 /* MotoParksTests.xctest */,
 				E52688C91D20ED4800990737 /* MotoParksUITests.xctest */,
+				E5BB2A801D40D37C0035F76C /* MotoParks Watch App.app */,
+				E5BB2A8C1D40D37C0035F76C /* MotoParks Watch App Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -186,6 +255,37 @@
 			path = InfoTableViewController;
 			sourceTree = "<group>";
 		};
+		E5BB2A811D40D37C0035F76C /* MotoParks Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				E5BB2A821D40D37C0035F76C /* Interface.storyboard */,
+				E5BB2A851D40D37C0035F76C /* Assets.xcassets */,
+				E5BB2A871D40D37C0035F76C /* Info.plist */,
+			);
+			path = "MotoParks Watch App";
+			sourceTree = "<group>";
+		};
+		E5BB2A901D40D37C0035F76C /* MotoParks Watch App Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E5BB2A931D40D37C0035F76C /* InterfaceController.swift */,
+				E5BB2A951D40D37C0035F76C /* ExtensionDelegate.swift */,
+				E5BB2A971D40D37C0035F76C /* NotificationController.swift */,
+				E5BB2A991D40D37C0035F76C /* Assets.xcassets */,
+				E5BB2A9B1D40D37C0035F76C /* Info.plist */,
+				E5BB2A911D40D37C0035F76C /* Supporting Files */,
+			);
+			path = "MotoParks Watch App Extension";
+			sourceTree = "<group>";
+		};
+		E5BB2A911D40D37C0035F76C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E5BB2A921D40D37C0035F76C /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -196,10 +296,12 @@
 				E52688A61D20ED4800990737 /* Sources */,
 				E52688A71D20ED4800990737 /* Frameworks */,
 				E52688A81D20ED4800990737 /* Resources */,
+				E5BB2AA61D40D37D0035F76C /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E5BB2A9D1D40D37C0035F76C /* PBXTargetDependency */,
 			);
 			name = MotoParks;
 			productName = MotoParks;
@@ -242,6 +344,40 @@
 			productReference = E52688C91D20ED4800990737 /* MotoParksUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		E5BB2A7F1D40D37C0035F76C /* MotoParks Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5BB2AA51D40D37D0035F76C /* Build configuration list for PBXNativeTarget "MotoParks Watch App" */;
+			buildPhases = (
+				E5BB2A7E1D40D37C0035F76C /* Resources */,
+				E5BB2AA41D40D37D0035F76C /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E5BB2A8F1D40D37C0035F76C /* PBXTargetDependency */,
+			);
+			name = "MotoParks Watch App";
+			productName = "MotoParks Watch App";
+			productReference = E5BB2A801D40D37C0035F76C /* MotoParks Watch App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		E5BB2A8B1D40D37C0035F76C /* MotoParks Watch App Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5BB2AA31D40D37D0035F76C /* Build configuration list for PBXNativeTarget "MotoParks Watch App Extension" */;
+			buildPhases = (
+				E5BB2A881D40D37C0035F76C /* Sources */,
+				E5BB2A891D40D37C0035F76C /* Frameworks */,
+				E5BB2A8A1D40D37C0035F76C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MotoParks Watch App Extension";
+			productName = "MotoParks Watch App Extension";
+			productReference = E5BB2A8C1D40D37C0035F76C /* MotoParks Watch App Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -269,6 +405,13 @@
 						CreatedOnToolsVersion = 7.3.1;
 						TestTargetID = E52688A91D20ED4800990737;
 					};
+					E5BB2A7F1D40D37C0035F76C = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = EF3Z2ZZH58;
+					};
+					E5BB2A8B1D40D37C0035F76C = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 				};
 			};
 			buildConfigurationList = E52688A51D20ED4800990737 /* Build configuration list for PBXProject "MotoParks" */;
@@ -287,6 +430,8 @@
 				E52688A91D20ED4800990737 /* MotoParks */,
 				E52688BD1D20ED4800990737 /* MotoParksTests */,
 				E52688C81D20ED4800990737 /* MotoParksUITests */,
+				E5BB2A7F1D40D37C0035F76C /* MotoParks Watch App */,
+				E5BB2A8B1D40D37C0035F76C /* MotoParks Watch App Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -314,6 +459,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5BB2A7E1D40D37C0035F76C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5BB2A861D40D37C0035F76C /* Assets.xcassets in Resources */,
+				E5BB2A841D40D37C0035F76C /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5BB2A8A1D40D37C0035F76C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5BB2A9A1D40D37C0035F76C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +511,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E5BB2A881D40D37C0035F76C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5BB2A981D40D37C0035F76C /* NotificationController.swift in Sources */,
+				E5BB2A961D40D37C0035F76C /* ExtensionDelegate.swift in Sources */,
+				E5BB2A941D40D37C0035F76C /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -362,7 +534,28 @@
 			target = E52688A91D20ED4800990737 /* MotoParks */;
 			targetProxy = E52688CA1D20ED4800990737 /* PBXContainerItemProxy */;
 		};
+		E5BB2A8F1D40D37C0035F76C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E5BB2A8B1D40D37C0035F76C /* MotoParks Watch App Extension */;
+			targetProxy = E5BB2A8E1D40D37C0035F76C /* PBXContainerItemProxy */;
+		};
+		E5BB2A9D1D40D37C0035F76C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E5BB2A7F1D40D37C0035F76C /* MotoParks Watch App */;
+			targetProxy = E5BB2A9C1D40D37C0035F76C /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E5BB2A821D40D37C0035F76C /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E5BB2A831D40D37C0035F76C /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		E52688D01D20ED4800990737 /* Debug */ = {
@@ -522,6 +715,68 @@
 			};
 			name = Release;
 		};
+		E5BB2A9F1D40D37D0035F76C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = MotoParks_Watch_App_Extension;
+				INFOPLIST_FILE = "MotoParks Watch App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rajanfernandez.MotoParks.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		E5BB2AA01D40D37D0035F76C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = MotoParks_Watch_App_Extension;
+				INFOPLIST_FILE = "MotoParks Watch App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rajanfernandez.MotoParks.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		E5BB2AA11D40D37D0035F76C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "MotoParks Watch App Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rajanfernandez.MotoParks.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		E5BB2AA21D40D37D0035F76C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "MotoParks Watch App Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rajanfernandez.MotoParks.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -560,6 +815,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		E5BB2AA31D40D37D0035F76C /* Build configuration list for PBXNativeTarget "MotoParks Watch App Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5BB2AA11D40D37D0035F76C /* Debug */,
+				E5BB2AA21D40D37D0035F76C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E5BB2AA51D40D37D0035F76C /* Build configuration list for PBXNativeTarget "MotoParks Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5BB2A9F1D40D37D0035F76C /* Debug */,
+				E5BB2AA01D40D37D0035F76C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
