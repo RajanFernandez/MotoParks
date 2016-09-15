@@ -12,8 +12,8 @@ import UIKit
 
 class InfoTableViewController: UITableViewController {
     
-    @IBAction func doneButtonTapped(sender: AnyObject?) {
-        navigationController?.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func doneButtonTapped(_ sender: AnyObject?) {
+        navigationController?.dismiss(animated: true, completion: nil)
     }
     
 }

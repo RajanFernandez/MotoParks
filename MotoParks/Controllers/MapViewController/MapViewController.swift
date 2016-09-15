@@ -9,16 +9,19 @@
 import UIKit
 import MapKit
 
-enum MPError: ErrorType {
-    case DataReadError
-    case DataParsingError
+enum MPError: Error {
+    case dataReadError
+    case dataParsingError
 }
 
-class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate,  NSXMLParserDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate,  XMLParserDelegate {
     
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var centerOnLocationButton: UIBarButtonItem!
     @IBOutlet var infoButton: UIBarButtonItem!
+    
+    let pinReuseIdentifier = "ParkPin"
+    
     var locationManager = CLLocationManager()
     
     let wellingtonRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: -41.286781914499926, longitude: 174.77909061803408), span: MKCoordinateSpan(latitudeDelta: 0.03924177397755102, longitudeDelta: 0.030196408891356441))
@@ -32,54 +35,54 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         do {
             let placemarks = try loadParkLocationsWithDataSetNamed("parks")
-            mapView.performSelectorOnMainThread(#selector(MKMapView.addAnnotations(_:)), withObject: placemarks, waitUntilDone: false)
+            mapView.performSelector(onMainThread: #selector(MKMapView.addAnnotations(_:)), with: placemarks, waitUntilDone: false)
         } catch {
-            let alert = UIAlertController(title: "Woops...", message: "Sorry, an error occured while loading data. Please try restarting the app.", preferredStyle: .Alert)
-            let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+            let alert = UIAlertController(title: "Woops...", message: "Sorry, an error occured while loading data. Please try restarting the app.", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
             alert.addAction(action)
-            dispatch_async(dispatch_get_main_queue()) { [weak self] in
-                self?.presentViewController(alert, animated: true, completion: nil)
+            DispatchQueue.main.async { [weak self] in
+                self?.present(alert, animated: true, completion: nil)
             }
         }
         
         // Hide the info button for now
-        infoButton.tintColor = UIColor.clearColor()
-        infoButton.enabled = false
+        infoButton.tintColor = UIColor.clear
+        infoButton.isEnabled = false
         
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         
-        if CLLocationManager.authorizationStatus() == .NotDetermined {
+        if CLLocationManager.authorizationStatus() == .notDetermined {
             locationManager.requestWhenInUseAuthorization()
         }
         
-        mapView.showsUserLocation = CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse
+        mapView.showsUserLocation = CLLocationManager.authorizationStatus() == .authorizedWhenInUse
     }
     
-    @IBAction func centerOnLocation(sender:AnyObject?) {
-        if CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse {
-            mapView.setCenterCoordinate(mapView.userLocation.coordinate, animated: true)
+    @IBAction func centerOnLocation(_ sender:AnyObject?) {
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            mapView.setCenter(mapView.userLocation.coordinate, animated: true)
         } else {
-            let alert = UIAlertController(title: "Enable location services", message: "To centre the map on your location we need to know your location. Please change your location access settings.", preferredStyle: .Alert)
-            let settingsAction = UIAlertAction(title: "Settings", style: .Default, handler: { (action) in
-                if let url = NSURL(string: UIApplicationOpenSettingsURLString) where UIApplication.sharedApplication().canOpenURL(url) {
-                    UIApplication.sharedApplication().openURL(url)
+            let alert = UIAlertController(title: "Enable location services", message: "To centre the map on your location we need to know your location. Please change your location access settings.", preferredStyle: .alert)
+            let settingsAction = UIAlertAction(title: "Settings", style: .default, handler: { (action) in
+                if let url = URL(string: UIApplicationOpenSettingsURLString) , UIApplication.shared.canOpenURL(url) {
+                    UIApplication.shared.openURL(url)
                 }
             })
             alert.addAction(settingsAction)
-            let okAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
             alert.addAction(okAction)
-            dispatch_async(dispatch_get_main_queue()) { [weak self] in
-                self?.presentViewController(alert, animated: true, completion: nil)
+            DispatchQueue.main.async { [weak self] in
+                self?.present(alert, animated: true, completion: nil)
             }
         }
     }
     
-    func loadParkLocationsWithDataSetNamed(named: String) throws -> [KMLPlacemark] {
+    func loadParkLocationsWithDataSetNamed(_ named: String) throws -> [KMLPlacemark] {
         
         guard let dataAsset = NSDataAsset(name: named) else {
-            throw MPError.DataReadError
+            throw MPError.dataReadError
         }
         
         let kmlParser = KMLParser(kml: dataAsset.data)
@@ -90,8 +93,21 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     // MARK: MKMapViewDelegate
     
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard let annotation = annotation as? ParkLocation else { return nil }
+        var view: MKPinAnnotationView
+        if let reuseableView = mapView.dequeueReusableAnnotationView(withIdentifier: pinReuseIdentifier) as? MKPinAnnotationView {
+            view = reuseableView
+            view.annotation = annotation
+        } else {
+            view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: pinReuseIdentifier)
+        }
+        view.pinTintColor = Color.Blue
+        return view
+    }
+    
     // Disable annotation callouts for now.
-    func mapView(mapView: MKMapView, didAddAnnotationViews views: [MKAnnotationView]) {
+    func mapView(_ mapView: MKMapView, didAdd views: [MKAnnotationView]) {
         for view in views {
             view.canShowCallout = false
         }
@@ -100,8 +116,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     // MARK: CLLocationManagerDelegate
     
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        mapView.showsUserLocation = CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        mapView.showsUserLocation = CLLocationManager.authorizationStatus() == .authorizedWhenInUse
     }
     
 }

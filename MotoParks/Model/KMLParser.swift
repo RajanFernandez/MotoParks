@@ -11,9 +11,9 @@ import Foundation
 /**
  KML parser to return placemarks.
  */
-class KMLParser: NSObject, NSXMLParserDelegate {
+class KMLParser: NSObject, XMLParserDelegate {
     
-    var parser: NSXMLParser!
+    var parser: XMLParser!
     
     var currentKey: String?
     
@@ -23,9 +23,9 @@ class KMLParser: NSObject, NSXMLParserDelegate {
     
     var placemarks = [KMLPlacemark]()
     
-    init(kml: NSData) {
+    init(kml: Data) {
         super.init()
-        parser = NSXMLParser(data: kml)
+        parser = XMLParser(data: kml)
         parser.delegate = self
     }
     
@@ -35,29 +35,29 @@ class KMLParser: NSObject, NSXMLParserDelegate {
         return placemarks
     }
     
-    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
+    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         currentKey = elementName
         if elementName == "Placemark" { clearTempData() }
     }
     
-    func parser(parser: NSXMLParser, foundCharacters string: String) {
+    func parser(_ parser: XMLParser, foundCharacters string: String) {
         
         guard let currentKey = currentKey else { return }
         
         let charSet = NSMutableCharacterSet()
-        charSet.formUnionWithCharacterSet(NSCharacterSet.whitespaceCharacterSet())
-        charSet.formUnionWithCharacterSet(NSCharacterSet.newlineCharacterSet())
+        charSet.formUnion(with: CharacterSet.whitespaces)
+        charSet.formUnion(with: CharacterSet.newlines)
         
         switch currentKey {
         case "name":
-            let nameString = string.stringByTrimmingCharactersInSet(charSet)
+            let nameString = string.trimmingCharacters(in: charSet as CharacterSet)
             if name != nil {
                 name! += nameString
             } else {
                 name = nameString
             }
         case "coordinates":
-            let coordinateArray = string.stringByTrimmingCharactersInSet(charSet).componentsSeparatedByString(",")
+            let coordinateArray = string.trimmingCharacters(in: charSet as CharacterSet).components(separatedBy: ",")
             guard coordinateArray.count > 2 else { return }
             longitude = Double(coordinateArray[0])
             latitude = Double(coordinateArray[1])
@@ -66,9 +66,9 @@ class KMLParser: NSObject, NSXMLParserDelegate {
         }
     }
     
-    func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
+    func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         guard elementName == "Placemark" else { return }
-        guard let latitude = latitude, longitude = longitude else { return }
+        guard let latitude = latitude, let longitude = longitude else { return }
         placemarks.append(KMLPlacemark(latitude: latitude, longitude: longitude, name: name))
         clearTempData()
     }

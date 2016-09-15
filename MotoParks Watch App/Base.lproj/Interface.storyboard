@@ -5,10 +5,17 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Map Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="MotoParks_Watch_App" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="MapInterfaceController" customModule="MotoParks_Watch_App_Extension">
+                    <items>
+                        <map width="1" height="1" alignment="left" id="5at-a6-q5O"/>
+                    </items>
+                    <connections>
+                        <outlet property="mapView" destination="5at-a6-q5O" id="2pe-oS-Gny"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
         </scene>
