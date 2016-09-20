@@ -11,6 +11,8 @@ import MapKit
 
 class ParkLocation: NSObject, MKAnnotation {
     
+    static let messageKey = "closestPark"
+    
     var address: String?
     var latitude: Double!
     var longitude: Double!
