@@ -9,11 +9,6 @@
 import UIKit
 import MapKit
 
-enum MPError: Error {
-    case dataReadError
-    case dataParsingError
-}
-
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate,  XMLParserDelegate {
     
     @IBOutlet var mapView: MKMapView!
@@ -21,8 +16,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     @IBOutlet var infoButton: UIBarButtonItem!
     
     let pinReuseIdentifier = "ParkPin"
+    let closeParkDistance: Double = 500
     
     var locationManager = CLLocationManager()
+    var dataSource = ParkLocationDataSource()
     
     let wellingtonRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: -41.286781914499926, longitude: 174.77909061803408), span: MKCoordinateSpan(latitudeDelta: 0.03924177397755102, longitudeDelta: 0.030196408891356441))
     
@@ -34,8 +31,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         mapView.setRegion(wellingtonRegion, animated: false)
         
         do {
-            let placemarks = try loadParkLocationsWithDataSetNamed("parks")
-            mapView.performSelector(onMainThread: #selector(MKMapView.addAnnotations(_:)), with: placemarks, waitUntilDone: false)
+            try dataSource.loadParkLocationsWithDataSetNamed("parks")
+            mapView.performSelector(onMainThread: #selector(MKMapView.addAnnotations(_:)),
+                                    with: dataSource.allParks,
+                                    waitUntilDone: false)
         } catch {
             let alert = UIAlertController(title: "Woops...", message: "Sorry, an error occured while loading data. Please try restarting the app.", preferredStyle: .alert)
             let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
@@ -79,38 +78,44 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         }
     }
     
-    func loadParkLocationsWithDataSetNamed(_ named: String) throws -> [KMLPlacemark] {
-        
-        guard let dataAsset = NSDataAsset(name: named) else {
-            throw MPError.dataReadError
-        }
-        
-        let kmlParser = KMLParser(kml: dataAsset.data)
-        let parks = kmlParser.getPlacemarks()
-        return parks
+    /// Returns the distance of a given motor bike park to the users location.
+    ///
+    /// - Parameters:
+    ///   - park: A motorbike parking location
+    ///   - userLocation: The users location
+    /// - Returns: The distance to the given park from the user location in metres.
+    func distanceToPark(_ park: KMLPlacemark, from userLocation: MKUserLocation) -> Double? {
+        return userLocation.location?.distance(from: park.location)
     }
     
     
     // MARK: MKMapViewDelegate
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        guard let annotation = annotation as? ParkLocation else { return nil }
+        guard let park = annotation as? KMLPlacemark else { return nil }
+        
         var view: MKPinAnnotationView
         if let reuseableView = mapView.dequeueReusableAnnotationView(withIdentifier: pinReuseIdentifier) as? MKPinAnnotationView {
             view = reuseableView
-            view.annotation = annotation
+            view.annotation = park
         } else {
             view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: pinReuseIdentifier)
         }
-        view.pinTintColor = Color.Blue
+        
+        if
+            let distance = distanceToPark(park, from: mapView.userLocation),
+            distance < closeParkDistance
+        {
+            view.pinTintColor = Color.Blue
+        } else {
+            view.pinTintColor = Color.Blue.withAlphaComponent(0.6)
+        }
         return view
     }
     
     // Disable annotation callouts for now.
     func mapView(_ mapView: MKMapView, didAdd views: [MKAnnotationView]) {
-        for view in views {
-            view.canShowCallout = false
-        }
+        views.forEach { (view) in view.canShowCallout = false }
     }
     
     
@@ -118,6 +123,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         mapView.showsUserLocation = CLLocationManager.authorizationStatus() == .authorizedWhenInUse
+    }
+    
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        guard let parks = dataSource.allParks else { return }
+        // Refresh the annotations to recolour the pins
+        mapView.removeAnnotations(mapView.annotations)
+        mapView.addAnnotations(parks)
     }
     
 }

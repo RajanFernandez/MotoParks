@@ -15,38 +15,53 @@ class MapInterfaceController: WKInterfaceController {
 
     @IBOutlet var mapView: WKInterfaceMap!
     
-    var closestPark: ParkLocation? {
+    let locationManager = CLLocationManager()
+    
+    var closeParks: [KMLPlacemark]? {
         didSet {
-            guard let closestPark = closestPark else { return }
+            guard let closeParks = closeParks else { return }
             mapView.removeAllAnnotations()
-            mapView.addAnnotation(closestPark.coordinate, with: .red)
+            closeParks.forEach { (park) in
+                mapView.addAnnotation(park.location.coordinate, with: .red)
+            }
         }
     }
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        if let closestPark = context as? ParkLocation { self.closestPark = closestPark }
+        if let closeParks = context as? [KMLPlacemark] { self.closeParks = closeParks }
     }
     
     override func didAppear() {
         super.didAppear()
-        updateClosestPark()
+        update()
     }
     
-    func updateClosestPark() {
+    func update() {
+        
+        
         let session = WCSession.default()
         session.delegate = self
-        session.activate()
+        session.activate()        
         session.sendMessage(
             [String : AnyObject](),
             replyHandler: { (response) in
-                if let closestPark = response[ParkLocation.messageKey] as? ParkLocation {
-                    self.closestPark = closestPark
-                }
+                print(response)
+//                if let closeParks = response[KMLPlacemark.messageKey] as? [KMLPlacemark] {
+//                    self.closeParks = closeParks
+//                }
             },
             errorHandler: { (error) in
                 // handle error
+                print(error)
+                let action = WKAlertAction(title: "OK", style: .default, handler: {})
+                self.presentAlert(withTitle: "Connection Error", message: "An error occured while communicating with you iPhone", preferredStyle: .alert, actions: [action])
         })
+    }
+    
+    func reload(withUserLocation userLocation: CLLocation, andParkLocations parkLocations: [KMLPlacemark]) {
+        mapView.removeAllAnnotations()
+        
     }
 
 }
@@ -56,6 +71,11 @@ extension MapInterfaceController: WCSessionDelegate {
     func session(_ session: WCSession,
                  activationDidCompleteWith activationState: WCSessionActivationState,
                  error: Error?){
+        
+    }
+    
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        
         
     }
     

@@ -13,23 +13,15 @@ import Foundation
  */
 class KMLParser: NSObject, XMLParserDelegate {
     
-    var parser: XMLParser!
+    private var currentKey: String?
+    private var latitude: Double?
+    private var longitude: Double?
+    private var name: String?
+    private var placemarks = [KMLPlacemark]()
     
-    var currentKey: String?
-    
-    var latitude: Double?
-    var longitude: Double?
-    var name: String?
-    
-    var placemarks = [KMLPlacemark]()
-    
-    init(kml: Data) {
-        super.init()
-        parser = XMLParser(data: kml)
+    func placemarks(fromKML data: Data) -> [KMLPlacemark] {
+        let parser = XMLParser(data: data)
         parser.delegate = self
-    }
-    
-    func getPlacemarks() -> [KMLPlacemark] {
         placemarks = [KMLPlacemark]()
         parser.parse()
         return placemarks

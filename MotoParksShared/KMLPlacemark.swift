@@ -9,21 +9,27 @@
 import Foundation
 import MapKit
 
-class KMLPlacemark: NSObject, MKAnnotation {
+class KMLPlacemark: NSObject {
     
     var name: String?
-    var coordinate: CLLocationCoordinate2D
-    
-    var title: String? { return name }
+    var location: CLLocation
     
     init(latitude: Double, longitude: Double, name: String? = nil) {
-        self.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        self.location = CLLocation(latitude: latitude, longitude: longitude)
         self.name = name
         super.init()
     }
     
     override var description: String {
-        return "KMLPlacemark: \(name), \(coordinate)"
+        return "KMLPlacemark: \(name), \(location)"
     }
+    
+}
+
+extension KMLPlacemark: MKAnnotation {
+    
+    var title: String? { return name }
+    
+    var coordinate: CLLocationCoordinate2D { return location.coordinate }
     
 }

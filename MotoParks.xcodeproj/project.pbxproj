@@ -12,16 +12,17 @@
 		E52688C31D20ED4800990737 /* MotoParksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52688C21D20ED4800990737 /* MotoParksTests.swift */; };
 		E52688CE1D20ED4800990737 /* MotoParksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52688CD1D20ED4800990737 /* MotoParksUITests.swift */; };
 		E52688DC1D20EEA700990737 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52688DB1D20EEA700990737 /* MapViewController.swift */; };
-		E52688E31D20EFA400990737 /* ParkLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52688E21D20EFA400990737 /* ParkLocation.swift */; };
 		E52688E61D20F0D100990737 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E52688E51D20F0D100990737 /* Main.storyboard */; };
 		E52688EB1D20F22000990737 /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52688EA1D20F22000990737 /* InfoTableViewController.swift */; };
+		E58129081E8CA06600BC4E8E /* DataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58129071E8CA06600BC4E8E /* DataError.swift */; };
+		E581290A1E8CA09100BC4E8E /* ParkLocationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58129091E8CA09100BC4E8E /* ParkLocationDataSource.swift */; };
 		E58C370D1D28C793001B03D5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E58C370C1D28C793001B03D5 /* MapKit.framework */; };
 		E58C370F1D28D4CA001B03D5 /* KMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58C370E1D28D4CA001B03D5 /* KMLParser.swift */; };
-		E58C37111D28D7DC001B03D5 /* KMLPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58C37101D28D7DC001B03D5 /* KMLPlacemark.swift */; };
 		E58C372E1D2CE976001B03D5 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E58C372D1D2CE976001B03D5 /* Settings.bundle */; };
+		E59EEA081E8CB87000949426 /* KMLPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59EEA071E8CB87000949426 /* KMLPlacemark.swift */; };
+		E59EEA091E8CB87000949426 /* KMLPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59EEA071E8CB87000949426 /* KMLPlacemark.swift */; };
 		E5AA07971D3AE0D900C3E615 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5AA07961D3AE0D900C3E615 /* LaunchScreen.storyboard */; };
 		E5B591D71D6801A100146A14 /* MapInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B591D61D6801A100146A14 /* MapInterfaceController.swift */; };
-		E5B591D91D680B0F00146A14 /* ParkLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52688E21D20EFA400990737 /* ParkLocation.swift */; };
 		E5B591DB1D680CDF00146A14 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B591DA1D680CDF00146A14 /* Color.swift */; };
 		E5BB2A841D40D37C0035F76C /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5BB2A821D40D37C0035F76C /* Interface.storyboard */; };
 		E5BB2A861D40D37C0035F76C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5BB2A851D40D37C0035F76C /* Assets.xcassets */; };
@@ -100,14 +101,15 @@
 		E52688CD1D20ED4800990737 /* MotoParksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotoParksUITests.swift; sourceTree = "<group>"; };
 		E52688CF1D20ED4800990737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E52688DB1D20EEA700990737 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		E52688E21D20EFA400990737 /* ParkLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkLocation.swift; sourceTree = "<group>"; };
 		E52688E51D20F0D100990737 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E52688EA1D20F22000990737 /* InfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewController.swift; sourceTree = "<group>"; };
+		E58129071E8CA06600BC4E8E /* DataError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataError.swift; sourceTree = "<group>"; };
+		E58129091E8CA09100BC4E8E /* ParkLocationDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkLocationDataSource.swift; sourceTree = "<group>"; };
 		E58C370C1D28C793001B03D5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E58C370E1D28D4CA001B03D5 /* KMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMLParser.swift; sourceTree = "<group>"; };
-		E58C37101D28D7DC001B03D5 /* KMLPlacemark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMLPlacemark.swift; sourceTree = "<group>"; };
 		E58C372D1D2CE976001B03D5 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		E58C372F1D2CF038001B03D5 /* Wellington.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Wellington.gpx; sourceTree = "<group>"; };
+		E59EEA071E8CB87000949426 /* KMLPlacemark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMLPlacemark.swift; sourceTree = "<group>"; };
 		E5AA07961D3AE0D900C3E615 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5B591D61D6801A100146A14 /* MapInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapInterfaceController.swift; sourceTree = "<group>"; };
 		E5B591DA1D680CDF00146A14 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -219,7 +221,8 @@
 			isa = PBXGroup;
 			children = (
 				E58C370E1D28D4CA001B03D5 /* KMLParser.swift */,
-				E58C37101D28D7DC001B03D5 /* KMLPlacemark.swift */,
+				E58129071E8CA06600BC4E8E /* DataError.swift */,
+				E58129091E8CA09100BC4E8E /* ParkLocationDataSource.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -262,7 +265,7 @@
 		E5B591D81D680AD800146A14 /* MotoParksShared */ = {
 			isa = PBXGroup;
 			children = (
-				E52688E21D20EFA400990737 /* ParkLocation.swift */,
+				E59EEA071E8CB87000949426 /* KMLPlacemark.swift */,
 			);
 			path = MotoParksShared;
 			sourceTree = SOURCE_ROOT;
@@ -427,6 +430,7 @@
 					};
 					E5BB2A8B1D40D37C0035F76C = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = EF3Z2ZZH58;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -503,12 +507,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E581290A1E8CA09100BC4E8E /* ParkLocationDataSource.swift in Sources */,
+				E59EEA081E8CB87000949426 /* KMLPlacemark.swift in Sources */,
 				E52688DC1D20EEA700990737 /* MapViewController.swift in Sources */,
-				E58C37111D28D7DC001B03D5 /* KMLPlacemark.swift in Sources */,
 				E5B591DB1D680CDF00146A14 /* Color.swift in Sources */,
-				E52688E31D20EFA400990737 /* ParkLocation.swift in Sources */,
 				E58C370F1D28D4CA001B03D5 /* KMLParser.swift in Sources */,
 				E52688AE1D20ED4800990737 /* AppDelegate.swift in Sources */,
+				E58129081E8CA06600BC4E8E /* DataError.swift in Sources */,
 				E52688EB1D20F22000990737 /* InfoTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,8 +538,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5B591D91D680B0F00146A14 /* ParkLocation.swift in Sources */,
 				E5BB2A981D40D37C0035F76C /* NotificationController.swift in Sources */,
+				E59EEA091E8CB87000949426 /* KMLPlacemark.swift in Sources */,
 				E5BB2A961D40D37C0035F76C /* ExtensionDelegate.swift in Sources */,
 				E5B591D71D6801A100146A14 /* MapInterfaceController.swift in Sources */,
 			);
@@ -751,6 +756,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = EF3Z2ZZH58;
 				IBSC_MODULE = MotoParks_Watch_App_Extension;
 				INFOPLIST_FILE = "MotoParks Watch App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rajanfernandez.MotoParks.watchkitapp;
@@ -769,6 +775,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = EF3Z2ZZH58;
 				IBSC_MODULE = MotoParks_Watch_App_Extension;
 				INFOPLIST_FILE = "MotoParks Watch App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rajanfernandez.MotoParks.watchkitapp;
@@ -784,6 +791,7 @@
 		E5BB2AA11D40D37D0035F76C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = EF3Z2ZZH58;
 				INFOPLIST_FILE = "MotoParks Watch App Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rajanfernandez.MotoParks.watchkitapp.watchkitextension;
@@ -799,6 +807,7 @@
 		E5BB2AA21D40D37D0035F76C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = EF3Z2ZZH58;
 				INFOPLIST_FILE = "MotoParks Watch App Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rajanfernandez.MotoParks.watchkitapp.watchkitextension;

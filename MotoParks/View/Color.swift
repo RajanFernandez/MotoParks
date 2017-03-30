@@ -10,6 +10,6 @@ import UIKit
 
 struct Color {
     
-    static let Blue = UIColor(colorLiteralRed: 14.0 / 255.0, green: 105.0 / 255.0, blue: 161.0 / 255.0, alpha: 1.0)
+    static let Blue: UIColor = #colorLiteral(red: 0.05490196078, green: 0.4117647059, blue: 0.631372549, alpha: 1)
     
 }
