@@ -37,7 +37,7 @@ class MapViewController: UIViewController {
         mapView.setRegion(wellingtonRegion, animated: false)
         
         do {
-            try dataSource.loadParkLocationsWithDataSetNamed("parks")
+            try dataSource.loadParkLocationsIfRequiredWithDataSetNamed("parks")
         } catch {
             let alert = UIAlertController(title: "Woops...", message: "Sorry, an error occured while loading data. Please try restarting the app.", preferredStyle: .alert)
             let action = UIAlertAction(title: "Ok", style: .default, handler: nil)

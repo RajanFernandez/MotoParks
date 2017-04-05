@@ -71,4 +71,5 @@ class KMLParser: NSObject, XMLParserDelegate {
         longitude = nil
         name = nil
     }
+    
 }

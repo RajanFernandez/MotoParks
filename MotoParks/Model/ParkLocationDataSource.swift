@@ -29,6 +29,11 @@ class ParkLocationDataSource {
         })
     }
     
+    func loadParkLocationsIfRequiredWithDataSetNamed(_ named: String) throws {
+        guard parks == nil else { return }
+        try loadParkLocationsWithDataSetNamed(named)
+    }
+    
     func parks(closestToUserLocation userLocation: CLLocation, numberOfParks: Int = 1, maximumDistance: Double? = nil) -> [Park]? {
         guard let parks = parks else { return nil }
         

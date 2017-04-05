@@ -52,6 +52,14 @@ extension WatchSessionManager: WCSessionDelegate {
             return
         }
         
+        // Ensure the data source has loaded the park data.
+        do {
+            try ParkLocationDataSource.shared.loadParkLocationsIfRequiredWithDataSetNamed("parks")
+        } catch {
+            replyHandler(message)
+            return
+        }
+        
         if let parks = ParkLocationDataSource.shared.parks(closestToUserLocation: applicationContext.userLocation, numberOfParks: 10, maximumDistance: 700) {
             applicationContext.parks = parks
         }

@@ -13,7 +13,11 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="MapInterfaceController" customModule="MotoParks_Watch_App_Extension">
                     <items>
-                        <map width="1" height="1" alignment="left" enabled="NO" id="5at-a6-q5O"/>
+                        <group width="1" height="1" alignment="left" contentMode="center" initiallyAnimated="NO" animationDuration="1" id="yax-kZ-lcT">
+                            <items>
+                                <map width="1" height="1" alignment="left" enabled="NO" id="5at-a6-q5O"/>
+                            </items>
+                        </group>
                     </items>
                     <menu key="menu" id="oPa-oc-UJn">
                         <items>
@@ -25,6 +29,7 @@
                         </items>
                     </menu>
                     <connections>
+                        <outlet property="group" destination="yax-kZ-lcT" id="q1Y-Ob-B18"/>
                         <outlet property="mapView" destination="5at-a6-q5O" id="2pe-oS-Gny"/>
                     </connections>
                 </controller>

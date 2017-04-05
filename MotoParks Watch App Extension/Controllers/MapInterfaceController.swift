@@ -13,6 +13,7 @@ import Foundation
 
 class MapInterfaceController: WKInterfaceController {
 
+    @IBOutlet var group: WKInterfaceGroup!
     @IBOutlet var mapView: WKInterfaceMap!
     
     let locationManager = CLLocationManager()
@@ -22,6 +23,25 @@ class MapInterfaceController: WKInterfaceController {
         self.setTitle("Nearby parks")
         WatchSessionManager.shared.delegate = self
         locationManager.delegate = self
+    }
+    
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
+        group.setBackgroundImageNamed("Activity")
+    }
+    
+    func showLoadingIndicator() {
+        DispatchQueue.main.async { [unowned self] in
+            self.mapView.setHidden(true)
+            self.group.startAnimatingWithImages(in: NSRange(location: 0, length: 15), duration: 1.0, repeatCount: 0)
+        }
+    }
+    
+    func hideLoadingIndicator() {
+        DispatchQueue.main.async { [unowned self] in
+            self.mapView.setHidden(false)
+            self.group.stopAnimating()
+        }
     }
     
     @IBAction func refreshMenuAction() {
@@ -39,6 +59,7 @@ class MapInterfaceController: WKInterfaceController {
             return
         }
         
+        self.showLoadingIndicator()
         locationManager.requestLocation()
     }
     
@@ -58,6 +79,7 @@ extension MapInterfaceController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        hideLoadingIndicator()
         DispatchQueue.main.async { [unowned self] in
             let okAction = WKAlertAction(title: "OK", style: .default, handler: { })
             self.presentAlert(withTitle: "Failed to determine your location", message: "Please ensure you have location services enabled and try again", preferredStyle: .alert, actions: [okAction])
@@ -69,6 +91,7 @@ extension MapInterfaceController: CLLocationManagerDelegate {
 extension MapInterfaceController: WatchSessionManagerDelegate {
     
     func update(with userLocation: CLLocation, andParks parks: [Park]? = nil) {
+        self.hideLoadingIndicator()
         DispatchQueue.main.async { [unowned self] in
             // Clear the map
             self.mapView.removeAllAnnotations()
@@ -90,6 +113,7 @@ extension MapInterfaceController: WatchSessionManagerDelegate {
     }
     
     func update(with error: Error) {
+        hideLoadingIndicator()
         // Default error alert
         DispatchQueue.main.async { [unowned self] in
             let okAction = WKAlertAction(title: "OK", style: .default, handler: { })
