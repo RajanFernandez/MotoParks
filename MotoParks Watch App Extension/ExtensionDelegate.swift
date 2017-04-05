@@ -7,11 +7,12 @@
 //
 
 import WatchKit
+import MapKit
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
     func applicationDidFinishLaunching() {
-        // Perform any final initialization of your application.
+        WatchSessionManager.shared.configureAndActivateSession()
     }
 
     func applicationDidBecomeActive() {

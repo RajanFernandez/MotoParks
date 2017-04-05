@@ -7,15 +7,18 @@
 //
 
 import UIKit
-import WatchConnectivity
+import MapKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // The session needs to be configured activated here in case the watch app requests data before the app has ever been launched.
+        WatchSessionManager.shared.configureAndActivateSession()
+        
         return true
     }
 
@@ -40,29 +43,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    
-    func application(_ application: UIApplication, handleWatchKitExtensionRequest userInfo: [AnyHashable : Any]?, reply: @escaping ([AnyHashable : Any]?) -> Void) {
-        
-    }
 
-}
-
-extension AppDelegate: WCSessionDelegate {
-
-    public func sessionDidDeactivate(_ session: WCSession) {
-        
-        
-    }
-
-    public func sessionDidBecomeInactive(_ session: WCSession) {
-        
-        
-    }
-
-    public func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        
-        
-    }
-    
 }
 
