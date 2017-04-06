@@ -21,7 +21,7 @@ class KMLPlacemark: NSObject {
     }
     
     override var description: String {
-        return "KMLPlacemark: \(name), \(location)"
+        return "KMLPlacemark: \(name ?? "nil"), \(location)"
     }
     
 }
