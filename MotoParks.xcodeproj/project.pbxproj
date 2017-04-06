@@ -40,7 +40,6 @@
 		E5BB2A8D1D40D37C0035F76C /* MotoParks Watch App Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E5BB2A8C1D40D37C0035F76C /* MotoParks Watch App Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E5BB2A961D40D37C0035F76C /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BB2A951D40D37C0035F76C /* ExtensionDelegate.swift */; };
 		E5BB2A981D40D37C0035F76C /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BB2A971D40D37C0035F76C /* NotificationController.swift */; };
-		E5BB2A9A1D40D37C0035F76C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5BB2A991D40D37C0035F76C /* Assets.xcassets */; };
 		E5BB2A9E1D40D37C0035F76C /* MotoParks Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = E5BB2A801D40D37C0035F76C /* MotoParks Watch App.app */; };
 /* End PBXBuildFile section */
 
@@ -141,7 +140,6 @@
 		E5BB2A921D40D37C0035F76C /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		E5BB2A951D40D37C0035F76C /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		E5BB2A971D40D37C0035F76C /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
-		E5BB2A991D40D37C0035F76C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5BB2A9B1D40D37C0035F76C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -331,7 +329,6 @@
 				E502A1931E946C070076F669 /* Controllers */,
 				E5BB2A951D40D37C0035F76C /* ExtensionDelegate.swift */,
 				E5BB2A971D40D37C0035F76C /* NotificationController.swift */,
-				E5BB2A991D40D37C0035F76C /* Assets.xcassets */,
 				E5BB2A9B1D40D37C0035F76C /* Info.plist */,
 				E5BB2A911D40D37C0035F76C /* Supporting Files */,
 			);
@@ -549,7 +546,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5BB2A9A1D40D37C0035F76C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

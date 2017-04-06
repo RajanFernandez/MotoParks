@@ -95,17 +95,18 @@ extension MapInterfaceController: WatchSessionManagerDelegate {
         DispatchQueue.main.async { [unowned self] in
             // Clear the map
             self.mapView.removeAllAnnotations()
+
+            // User location 
+            // - Strangely if this is done after the parks, the annotation doesn't show. Leaving it here for now.
+            self.mapView.addAnnotation(userLocation.coordinate, withImageNamed: "userlocation", centerOffset: CGPoint(x: 0, y: 0))
             
             // Park locations
             if let parks = parks {
                 for park in parks {
-                    self.mapView.addAnnotation(park.coordinate, with: #imageLiteral(resourceName: "park"), centerOffset: CGPoint(x: 0, y: 0))
+                    self.mapView.addAnnotation(park.coordinate, withImageNamed: "park", centerOffset: CGPoint(x: 0, y: 0))
                 }
             }
-            
-            // User location
-            self.mapView.addAnnotation(userLocation.coordinate, with: #imageLiteral(resourceName: "userlocation"), centerOffset: CGPoint(x: 0, y: 0))
-            
+
             // Set the displayed region
             let region = self.mapRegion(withUserLocation: userLocation, andParks: parks)
             self.mapView.setRegion(region)
