@@ -96,15 +96,15 @@ extension MapInterfaceController: WatchSessionManagerDelegate {
             // Clear the map
             self.mapView.removeAllAnnotations()
             
-            // User location
-            self.mapView.addAnnotation(userLocation.coordinate, with: #imageLiteral(resourceName: "userlocation"), centerOffset: CGPoint(x: 0, y: 0))
-            
             // Park locations
             if let parks = parks {
                 for park in parks {
                     self.mapView.addAnnotation(park.coordinate, with: #imageLiteral(resourceName: "park"), centerOffset: CGPoint(x: 0, y: 0))
                 }
             }
+            
+            // User location
+            self.mapView.addAnnotation(userLocation.coordinate, with: #imageLiteral(resourceName: "userlocation"), centerOffset: CGPoint(x: 0, y: 0))
             
             // Set the displayed region
             let region = self.mapRegion(withUserLocation: userLocation, andParks: parks)

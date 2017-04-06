@@ -30,10 +30,6 @@
 	<string>MotoParks requires access to your location when you are not using the app to show you location on your Apple Watch.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>MotoParks requires access to your location to show your position on the map.</string>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>location</string>
-	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
