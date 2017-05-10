@@ -17,16 +17,26 @@ class ParkLocationDataSource {
     
     var allParks: [Park]? { return parks }
     
-    func loadParkLocationsWithDataSetNamed(_ named: String) throws {
+    private func loadParkLocationsWithDataSetNamed(_ named: String) throws {
         
         guard let dataAsset = NSDataAsset(name: named) else {
             throw DataError.readError
         }
         
-        let placemarks = KMLParser().placemarks(fromKML: dataAsset.data)
-        parks = placemarks.map({ (placemark) -> Park in
-            return Park(placemark: placemark)
-        })
+        let json = try JSONSerialization.jsonObject(with: dataAsset.data, options: [])
+        
+        guard let parkJSONs = (json as? [String: Any])?["parks"] as? [[String: Any]] else {
+            throw DataError.readError
+        }
+        
+        var parks = [Park]()
+        for parkJSON in parkJSONs {
+            if let park = Park(dictionary: parkJSON) {
+                parks.append(park)
+            }
+        }
+        
+        self.parks = parks
     }
     
     func loadParkLocationsIfRequiredWithDataSetNamed(_ named: String) throws {

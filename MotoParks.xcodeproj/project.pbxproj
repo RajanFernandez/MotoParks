@@ -10,7 +10,6 @@
 		E502A17F1E9458610076F669 /* MapViewController+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E502A17E1E9458610076F669 /* MapViewController+Actions.swift */; };
 		E502A1811E9458FD0076F669 /* MapViewController+CLLocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E502A1801E9458FD0076F669 /* MapViewController+CLLocationManagerDelegate.swift */; };
 		E502A1831E945AC40076F669 /* MapViewController+MKMapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E502A1821E945AC40076F669 /* MapViewController+MKMapViewDelegate.swift */; };
-		E502A1841E9468B20076F669 /* KMLPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59EEA0A1E8DAFE900949426 /* KMLPlacemark.swift */; };
 		E502A1901E946BE30076F669 /* WatchConnectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E502A18D1E946BE30076F669 /* WatchConnectionError.swift */; };
 		E502A1911E946BE30076F669 /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E502A18E1E946BE30076F669 /* WatchSessionManager.swift */; };
 		E502A1921E946BE30076F669 /* WatchSessionManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E502A18F1E946BE30076F669 /* WatchSessionManagerDelegate.swift */; };
@@ -29,9 +28,7 @@
 		E58129081E8CA06600BC4E8E /* DataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58129071E8CA06600BC4E8E /* DataError.swift */; };
 		E581290A1E8CA09100BC4E8E /* ParkLocationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58129091E8CA09100BC4E8E /* ParkLocationDataSource.swift */; };
 		E58C370D1D28C793001B03D5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E58C370C1D28C793001B03D5 /* MapKit.framework */; };
-		E58C370F1D28D4CA001B03D5 /* KMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58C370E1D28D4CA001B03D5 /* KMLParser.swift */; };
 		E58C372E1D2CE976001B03D5 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E58C372D1D2CE976001B03D5 /* Settings.bundle */; };
-		E59EEA0B1E8DAFE900949426 /* KMLPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59EEA0A1E8DAFE900949426 /* KMLPlacemark.swift */; };
 		E59EEA0F1E8DB02E00949426 /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59EEA0E1E8DB02E00949426 /* WatchSessionManager.swift */; };
 		E5AA07971D3AE0D900C3E615 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5AA07961D3AE0D900C3E615 /* LaunchScreen.storyboard */; };
 		E5B591DB1D680CDF00146A14 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B591DA1D680CDF00146A14 /* Color.swift */; };
@@ -125,10 +122,8 @@
 		E58129071E8CA06600BC4E8E /* DataError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataError.swift; sourceTree = "<group>"; };
 		E58129091E8CA09100BC4E8E /* ParkLocationDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkLocationDataSource.swift; sourceTree = "<group>"; };
 		E58C370C1D28C793001B03D5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		E58C370E1D28D4CA001B03D5 /* KMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMLParser.swift; sourceTree = "<group>"; };
 		E58C372D1D2CE976001B03D5 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		E58C372F1D2CF038001B03D5 /* Wellington.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Wellington.gpx; sourceTree = "<group>"; };
-		E59EEA0A1E8DAFE900949426 /* KMLPlacemark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMLPlacemark.swift; sourceTree = "<group>"; };
 		E59EEA0E1E8DB02E00949426 /* WatchSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSessionManager.swift; sourceTree = "<group>"; };
 		E5AA07961D3AE0D900C3E615 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5B591DA1D680CDF00146A14 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -256,8 +251,6 @@
 		E52688DF1D20EF1F00990737 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E59EEA0A1E8DAFE900949426 /* KMLPlacemark.swift */,
-				E58C370E1D28D4CA001B03D5 /* KMLParser.swift */,
 				E58129071E8CA06600BC4E8E /* DataError.swift */,
 				E58129091E8CA09100BC4E8E /* ParkLocationDataSource.swift */,
 				E502A1961E9474480076F669 /* Park.swift */,
@@ -561,12 +554,10 @@
 				E502A19A1E9482A30076F669 /* ApplicationContext.swift in Sources */,
 				E502A1831E945AC40076F669 /* MapViewController+MKMapViewDelegate.swift in Sources */,
 				E59EEA0F1E8DB02E00949426 /* WatchSessionManager.swift in Sources */,
-				E59EEA0B1E8DAFE900949426 /* KMLPlacemark.swift in Sources */,
 				E52688DC1D20EEA700990737 /* MapViewController.swift in Sources */,
 				E5B591DB1D680CDF00146A14 /* Color.swift in Sources */,
 				E502A1811E9458FD0076F669 /* MapViewController+CLLocationManagerDelegate.swift in Sources */,
 				E502A17F1E9458610076F669 /* MapViewController+Actions.swift in Sources */,
-				E58C370F1D28D4CA001B03D5 /* KMLParser.swift in Sources */,
 				E52688AE1D20ED4800990737 /* AppDelegate.swift in Sources */,
 				E58129081E8CA06600BC4E8E /* DataError.swift in Sources */,
 				E52688EB1D20F22000990737 /* InfoTableViewController.swift in Sources */,
@@ -593,7 +584,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E502A1841E9468B20076F669 /* KMLPlacemark.swift in Sources */,
 				E5BB2A981D40D37C0035F76C /* NotificationController.swift in Sources */,
 				E502A1901E946BE30076F669 /* WatchConnectionError.swift in Sources */,
 				E502A1951E946C070076F669 /* MapInterfaceController.swift in Sources */,
@@ -664,6 +654,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 5;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -688,6 +679,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -713,6 +705,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 5;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -731,6 +724,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
@@ -822,6 +816,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = EF3Z2ZZH58;
 				IBSC_MODULE = MotoParks_Watch_App_Extension;
 				INFOPLIST_FILE = "MotoParks Watch App/Info.plist";
@@ -841,6 +836,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = EF3Z2ZZH58;
 				IBSC_MODULE = MotoParks_Watch_App_Extension;
 				INFOPLIST_FILE = "MotoParks Watch App/Info.plist";
@@ -857,6 +853,7 @@
 		E5BB2AA11D40D37D0035F76C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = EF3Z2ZZH58;
 				INFOPLIST_FILE = "MotoParks Watch App Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -873,6 +870,7 @@
 		E5BB2AA21D40D37D0035F76C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = EF3Z2ZZH58;
 				INFOPLIST_FILE = "MotoParks Watch App Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";

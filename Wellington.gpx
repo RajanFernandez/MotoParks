@@ -8,7 +8,7 @@ http://www.garmin.com/xmlschemas/GpxExtensions/v3
 http://www8.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd"
 version="1.1"
 creator="gpx-poi.com">
-   <wpt lat="-41.290883" lon="174.780872">
+   <wpt lat="-41.286261" lon="174.777330">
       <time>2016-07-06T07:51:23Z</time>
       <desc>Wellington</desc>
       <extensions>

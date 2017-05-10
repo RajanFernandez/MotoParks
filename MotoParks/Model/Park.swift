@@ -14,9 +14,9 @@ class Park: NSObject {
     var location: CLLocation
     
     private struct Keys {
-        static let latitude: String = "UserLocationLatitude"
-        static let longitude: String = "UserLocationLongitude"
-        static let name: String = "Parks"
+        static let latitude: String = "latitude"
+        static let longitude: String = "longitude"
+        static let name: String = "name"
     }
     
     init(location: CLLocation, name: String? = nil) {
@@ -33,10 +33,6 @@ class Park: NSObject {
         
         self.location = CLLocation(latitude: latitude, longitude: longitude)
         self.name = dictionary[Keys.name] as? String
-    }
-    
-    convenience init(placemark: KMLPlacemark) {
-        self.init(location: placemark.location, name: placemark.name)
     }
     
     var dictionary: [String: Any] {
