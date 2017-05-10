@@ -15,7 +15,7 @@ class MapViewController: UIViewController {
     @IBOutlet var centerOnLocationButton: UIBarButtonItem!
     @IBOutlet var infoButton: UIBarButtonItem!
     
-    let pinReuseIdentifier = "ParkPin"
+    let pinReuseIdentifier = "ParkAnnotation"
     let farParkColorAlphaComponent: CGFloat = 0.6
     let closeParkDistance: Double = 500
     
@@ -75,17 +75,17 @@ class MapViewController: UIViewController {
         return userLocation.location?.distance(from: park.location)
     }
     
-    /// Provides a colour for map annocation views based on the distance the user is from the 
+    /// Provides a alpha value for map annocation views based on the distance the user is from the
     ///
     /// - Parameters:
     ///   - park: A map
     ///   - userLocation: The users current location
     /// - Returns: A UIColor
-    func colorForPark(_ park: Park, withUserLocation userLocation: MKUserLocation) -> UIColor {
+    func alpha(for park: Park, withUserLocation userLocation: MKUserLocation) -> CGFloat {
         guard
             let distance = distanceToPark(park, from: userLocation),
             distance < closeParkDistance
-            else { return Color.Blue.withAlphaComponent(farParkColorAlphaComponent) }
+            else { return farParkColorAlphaComponent }
 
         // In the close park range, the alpha component is decreased and then guard statement above ensures that far away parks are dim on the map.
         //          ^
@@ -96,7 +96,7 @@ class MapViewController: UIViewController {
         //          |___________________________________
         //                   ^close park threshold      distance
         let alphaComponent = 1 - (1 - farParkColorAlphaComponent) / 4 * CGFloat(distance / closeParkDistance)
-        return Color.Blue.withAlphaComponent(alphaComponent)
+        return alphaComponent
     }
 
 }

@@ -13,15 +13,16 @@ extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard let park = annotation as? Park else { return nil }
         
-        var view: MKPinAnnotationView
-        if let reuseableView = mapView.dequeueReusableAnnotationView(withIdentifier: pinReuseIdentifier) as? MKPinAnnotationView {
+        var view: MKAnnotationView
+        if let reuseableView = mapView.dequeueReusableAnnotationView(withIdentifier: pinReuseIdentifier) {
             view = reuseableView
             view.annotation = park
         } else {
-            view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: pinReuseIdentifier)
+            view = MKAnnotationView(annotation: annotation, reuseIdentifier: pinReuseIdentifier)
         }
         
-        view.pinTintColor = colorForPark(park, withUserLocation: mapView.userLocation)
+        view.image = UIImage(named: "park")
+        view.alpha = alpha(for: park, withUserLocation: mapView.userLocation)
         return view
     }
     
@@ -33,6 +34,11 @@ extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         guard let newUserLocation = userLocation.location else { return }
         
+        // Ensure the user location is shown on top of the other annotations.
+        if let currentLocationAnnotationView = mapView.view(for: mapView.userLocation) {
+            currentLocationAnnotationView.superview?.bringSubview(toFront: currentLocationAnnotationView)
+        }
+        
         // Only rerender pins if the user has moved a significant distance.
         if
             let lastKnownUserLocation = lastKnownUserLocation?.location,
@@ -42,11 +48,11 @@ extension MapViewController: MKMapViewDelegate {
         // Save the users new location
         lastKnownUserLocation = userLocation
         
-        // Recolor the
+        // Recolor the annotations
         for annotation in mapView.annotations {
             guard let park = annotation as? Park else { continue }
             let view = mapView.view(for: annotation)
-            (view as? MKPinAnnotationView)?.pinTintColor = colorForPark(park, withUserLocation: mapView.userLocation)
+            view?.alpha = alpha(for: park, withUserLocation: mapView.userLocation)
         }
         
         // Update the application context for the watch app
