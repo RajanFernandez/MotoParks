@@ -16,13 +16,13 @@ class WatchSessionManager: NSObject {
     
     func configureAndActivateSession() {
         guard WCSession.isSupported() else { return }
-        let session = WCSession.default()
+        let session = WCSession.default
         session.delegate = self;
         session.activate()
     }
 
     func updateApplicationContext(_ context: [String : Any]) throws {
-        let session = WCSession.default()
+        let session = WCSession.default
         // If a phone is not paired to a watch, or the watch app is not installed, we can consider the session invalid and not both sending any data to the watch.
         guard session.isPaired && session.isWatchAppInstalled else { return }
         try session.updateApplicationContext(context)

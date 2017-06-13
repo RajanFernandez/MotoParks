@@ -17,7 +17,7 @@ class WatchSessionManager: NSObject {
     weak var delegate: WatchSessionManagerDelegate?
     
     func configureAndActivateSession() {
-        let session = WCSession.default()
+        let session = WCSession.default
         session.delegate = self
         session.activate()
         
@@ -29,11 +29,11 @@ class WatchSessionManager: NSObject {
     func requestParks(forUserLocation userLocation: CLLocation) {
         
         // The session must be reachable to use sendMessage:replyHandler:errorHandler
-        guard WCSession.default().isReachable else { return }
+        guard WCSession.default.isReachable else { return }
         
         // Send the user location in an application context to the phone.
         let applicationContext = ApplicationContext(userLocation: userLocation, parks: [Park]())
-        WCSession.default().sendMessage(applicationContext.messagePayload,
+        WCSession.default.sendMessage(applicationContext.messagePayload,
                                         replyHandler:
             { [unowned self] (reply) in
                 self.didRecieveReply(reply)
