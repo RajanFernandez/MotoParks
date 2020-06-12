@@ -16,8 +16,8 @@ extension MapViewController {
         } else {
             let alert = UIAlertController(title: "Enable location services", message: "To centre the map on your location we need to know your location. Please change your location access settings.", preferredStyle: .alert)
             let settingsAction = UIAlertAction(title: "Settings", style: .default, handler: { (action) in
-                if let url = URL(string: UIApplicationOpenSettingsURLString) , UIApplication.shared.canOpenURL(url) {
-                    UIApplication.shared.openURL(url)
+                if let url = URL(string: UIApplication.openSettingsURLString) , UIApplication.shared.canOpenURL(url) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 }
             })
             alert.addAction(settingsAction)

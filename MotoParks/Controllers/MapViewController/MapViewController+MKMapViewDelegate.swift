@@ -36,7 +36,7 @@ extension MapViewController: MKMapViewDelegate {
         
         // Ensure the user location is shown on top of the other annotations.
         if let currentLocationAnnotationView = mapView.view(for: mapView.userLocation) {
-            currentLocationAnnotationView.superview?.bringSubview(toFront: currentLocationAnnotationView)
+            currentLocationAnnotationView.superview?.bringSubviewToFront(currentLocationAnnotationView)
         }
         
         // Only rerender pins if the user has moved a significant distance.

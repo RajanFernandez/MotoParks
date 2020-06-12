@@ -64,7 +64,7 @@ class MapInterfaceController: WKInterfaceController {
     }
     
     func mapRegion(withUserLocation userLocation: CLLocation, andParks closeParks: [Park]?) -> MKCoordinateRegion {
-        let region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 500, 500)
+        let region = MKCoordinateRegion.init(center: userLocation.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
         return region
     }
     
